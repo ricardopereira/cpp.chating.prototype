@@ -22,6 +22,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Core\CoreShell.h" />
+    <ClInclude Include="..\Logic\ChatClasses.h" />
     <ClInclude Include="..\Logic\ChatComunication.h" />
     <ClInclude Include="..\Logic\ChatPrivate.h" />
     <ClInclude Include="..\Logic\ChatPublic.h" />

@@ -10,6 +10,21 @@
       <Platform>Win32</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Core\CoreShell.h" />
+    <ClInclude Include="..\TUI\CustomShell.h" />
+    <ClInclude Include="ChattingClient.h" />
+    <ClInclude Include="Shell.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="ChattingClient.lib" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Core\CoreShell.cpp" />
+    <ClCompile Include="..\TUI\CustomShell.cpp" />
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Shell.cpp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{114030CB-4A2C-4E52-AAA0-D12CDC0B849D}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
@@ -52,6 +67,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>../Core;../Logic;../TUI;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -75,8 +91,6 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

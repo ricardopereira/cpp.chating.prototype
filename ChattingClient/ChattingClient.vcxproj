@@ -77,6 +77,20 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\Logic\ChatPrivate.cpp" />
+    <ClCompile Include="..\Logic\ChatPublic.cpp" />
+    <ClCompile Include="..\Logic\ChatRoom.cpp" />
+    <ClCompile Include="..\Logic\ChatUser.cpp" />
+    <ClCompile Include="Dll.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Logic\ChatClasses.h" />
+    <ClInclude Include="..\Logic\ChatComunication.h" />
+    <ClInclude Include="..\Logic\ChatPrivate.h" />
+    <ClInclude Include="..\Logic\ChatPublic.h" />
+    <ClInclude Include="..\Logic\ChatRoom.h" />
+    <ClInclude Include="..\Logic\ChatUser.h" />
+    <ClInclude Include="Dll.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
