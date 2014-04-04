@@ -20,7 +20,7 @@ int LerListaUtilizadores(UTILIZADOR *utilizadores);
 int IniciarConversa(TCHAR *utilizador);
 int DesligarConversa();
 int EnviarMensagemPrivada(TCHAR *msg);
-void EnviarMensagemPública(TCHAR *msg);
+int EnviarMensagemPublica(TCHAR *msg);
 CHAT LerInformacaoInicial();
 void LerMensagensPublicas();
 void LerMensagensPrivadas();
@@ -30,7 +30,7 @@ int Desligar();
 
 ###### Chatting
 
-Client example
+Client example: use DLL
 
 Testing with server running:
 ```
