@@ -1,3 +1,4 @@
+#include <windows.h>
 #include <iostream>
 #include <string>
 #include <vector>
@@ -15,7 +16,7 @@ class CoreShell
 	vector<string> args;
 	vector<CommandItem>* listCommands;
 	static const string noCommand;
-	static const string noArgument;
+	static TCHAR* noArgument;
 	int closing;
 
 	void notFound(const string& c);
@@ -47,7 +48,7 @@ public:
 	// Comando recebido
 	int isCommand(const string& c);
 	const string& getCommand();
-	const string& getArgument(int index);
+	TCHAR* getArgument(int index);
 	int getArgumentAsInt(int index);
 
 	string getAsString();

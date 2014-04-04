@@ -3,10 +3,9 @@
 #include <tchar.h>
 
 #include "Shell.h"
+#include "ChatComunication.h"
 
 using namespace std;
-
-#define BUFFERSIZE 512
 
 int main()
 {
@@ -25,8 +24,8 @@ int main()
 				// Teste
 				HANDLE hPipe;
 				BOOL connected = 1;
-				PTCHAR pipeName = TEXT("\\\\.\\pipe\\pipeserver"); //LPTSTR
-
+				BOOL success = 0;
+				
 				hPipe = CreateNamedPipe(pipeName,
 					PIPE_ACCESS_DUPLEX, //OpenMode
 					PIPE_TYPE_MESSAGE | PIPE_READMODE_MESSAGE | PIPE_WAIT, //PipeMode
@@ -39,7 +38,7 @@ int main()
 				// Verificar se pipe foi instanciado
 				if (hPipe == INVALID_HANDLE_VALUE)
 				{
-					cout << TEXT("CreateNamedPipe failed: ") << GetLastError() << endl;
+					wcout << TEXT("CreateNamedPipe failed: ") << GetLastError() << endl;
 					return -1;
 				}
 
@@ -49,7 +48,43 @@ int main()
 				if (connected && GetLastError() != ERROR_PIPE_CONNECTED)
 				{
 					// Cliente conectado
-					cout << TEXT("Conexão com sucesso.") << endl;
+					wcout << TEXT("Client connected") << endl;
+				}
+
+				// Ler mensagens
+				TCHAR msg[BUFFERSIZE];
+				DWORD msgBytes;
+
+				while (1)
+				{
+					success = ReadFile(hPipe,
+						msg, // buffer to receive data 
+						BUFFERSIZE*sizeof(TCHAR), // size of buffer 
+						&msgBytes, // number of bytes read 
+						NULL); // not overlapped I/O 
+
+					if (!success || msgBytes == 0)
+					{   
+						if (GetLastError() == ERROR_BROKEN_PIPE)
+						{
+							wcout << TEXT("Client disconnected: ") << GetLastError() << endl;
+						}
+						else
+						{
+							wcout << TEXT("ReadFile failed: ") << GetLastError() << endl;
+						}
+						break;
+					}
+					else
+						 wcout << msg << endl;
+				}
+
+				if (connected)
+				{
+					// Forca o envio das ultimas alteracoes
+					FlushFileBuffers(hPipe); 
+					// Desconectar
+					DisconnectNamedPipe(hPipe);
 				}
 
 				// Fechar instancia do pipe

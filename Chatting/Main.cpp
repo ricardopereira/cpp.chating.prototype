@@ -12,6 +12,7 @@ using namespace std;
 int main()
 {
 	Shell sh;
+	int connected = false;
 
 	// Iniciar a shell
 	sh.open();
@@ -23,10 +24,16 @@ int main()
 			// Verificar comando
 			if (sh.isCommand("login"))
 			{
-				cout << "Result: " << Test(TEXT("Teste da DLL")) << endl;
+				wcout << sh.getArgument(0) << endl;
+				connected = Autenticar(sh.getArgument(0),sh.getArgument(1));
 			}
 			else if (sh.isCommand("x"))
 			{
+				if (connected)
+				{
+					Sair();
+					connected = false;
+				}
 				cout << "Good bye" << endl;
 				break;
 			}

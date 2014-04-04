@@ -1,3 +1,6 @@
+#define BUFFERSIZE 512
+#define pipeName _T("\\\\.\\pipe\\pipeserver") //PTCHAR LPTSTR PCTSTR
+
 /*Valores maximos*/
 #define MAXLOGIN 20
 #define MAXCOMMAND 50

@@ -5,7 +5,7 @@
 #include "CoreShell.h"
 
 const string CoreShell::noCommand = "No command";
-const string CoreShell::noArgument = "No argument";
+TCHAR* CoreShell::noArgument = TEXT("No argument");
 
 CoreShell::CoreShell()
 {
@@ -61,18 +61,19 @@ int CoreShell::isCommand(const string& c)
 	return getCommand().compare(c) == 0;
 }
 
-const string& CoreShell::getArgument(int index)
+TCHAR* CoreShell::getArgument(int index)
 {
 	// Sem contar com o nome do comando
 	int realIdx = index+1;
 	// Obter argumento
 	if (realIdx > (int)args.size()-1) return noArgument;
-	return args[realIdx];
+	return TEXT("Ricardo"); //args[realIdx];
 }
 
 int CoreShell::getArgumentAsInt(int index)
 {
-	return atoi(getArgument(index).c_str());
+	//return atoi(getArgument(index).c_str());
+	return 0;
 }
 
 const string& CoreShell::getName()
