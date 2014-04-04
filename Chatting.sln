@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ChattingServer", "ChattingServer\ChattingServer.vcxproj", "{85F52DD4-EDC3-4AA5-B4FC-321A4027F245}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ChattingClient", "ChattingClient\ChattingClient.vcxproj", "{9E09F8EF-B745-40D7-9D72-2D6612186852}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Chatting", "Chatting\Chatting.vcxproj", "{114030CB-4A2C-4E52-AAA0-D12CDC0B849D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{85F52DD4-EDC3-4AA5-B4FC-321A4027F245}.Debug|Win32.ActiveCfg = Debug|Win32
+		{85F52DD4-EDC3-4AA5-B4FC-321A4027F245}.Debug|Win32.Build.0 = Debug|Win32
+		{85F52DD4-EDC3-4AA5-B4FC-321A4027F245}.Release|Win32.ActiveCfg = Release|Win32
+		{85F52DD4-EDC3-4AA5-B4FC-321A4027F245}.Release|Win32.Build.0 = Release|Win32
+		{9E09F8EF-B745-40D7-9D72-2D6612186852}.Debug|Win32.ActiveCfg = Debug|Win32
+		{9E09F8EF-B745-40D7-9D72-2D6612186852}.Debug|Win32.Build.0 = Debug|Win32
+		{9E09F8EF-B745-40D7-9D72-2D6612186852}.Release|Win32.ActiveCfg = Release|Win32
+		{9E09F8EF-B745-40D7-9D72-2D6612186852}.Release|Win32.Build.0 = Release|Win32
+		{114030CB-4A2C-4E52-AAA0-D12CDC0B849D}.Debug|Win32.ActiveCfg = Debug|Win32
+		{114030CB-4A2C-4E52-AAA0-D12CDC0B849D}.Debug|Win32.Build.0 = Debug|Win32
+		{114030CB-4A2C-4E52-AAA0-D12CDC0B849D}.Release|Win32.ActiveCfg = Release|Win32
+		{114030CB-4A2C-4E52-AAA0-D12CDC0B849D}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
