@@ -15,6 +15,15 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Dll.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Core\Thread.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Logic\ChatUser.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="..\Logic\ChatPrivate.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -22,12 +31,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\Logic\ChatRoom.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Logic\ChatUser.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Dll.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -38,6 +41,15 @@
     <ClInclude Include="..\Logic\ChatComunication.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\Logic\ChatUser.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Dll.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Core\Thread.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="..\Logic\ChatPrivate.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -45,12 +57,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\Logic\ChatRoom.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Logic\ChatUser.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Dll.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

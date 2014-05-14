@@ -12,16 +12,18 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Core\CoreShell.cpp" />
+    <ClCompile Include="..\Core\Thread.cpp" />
     <ClCompile Include="..\Logic\ChatPrivate.cpp" />
     <ClCompile Include="..\Logic\ChatPublic.cpp" />
     <ClCompile Include="..\Logic\ChatRoom.cpp" />
-    <ClCompile Include="..\Logic\ChatUser.cpp" />
     <ClCompile Include="..\TUI\CustomShell.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Shell.cpp" />
+    <ClCompile Include="ThreadCliente.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Core\CoreShell.h" />
+    <ClInclude Include="..\Core\Thread.h" />
     <ClInclude Include="..\Logic\ChatClasses.h" />
     <ClInclude Include="..\Logic\ChatComunication.h" />
     <ClInclude Include="..\Logic\ChatPrivate.h" />
@@ -30,6 +32,7 @@
     <ClInclude Include="..\Logic\ChatUser.h" />
     <ClInclude Include="..\TUI\CustomShell.h" />
     <ClInclude Include="Shell.h" />
+    <ClInclude Include="ThreadCliente.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{85F52DD4-EDC3-4AA5-B4FC-321A4027F245}</ProjectGuid>

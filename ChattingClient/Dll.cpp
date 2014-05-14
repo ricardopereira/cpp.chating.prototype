@@ -11,7 +11,7 @@ int Test(PTCHAR str)
 	return _tcslen(str);
 }
 
-int Autenticar(TCHAR *login, TCHAR *pass)
+int Autenticar(const TCHAR *login, const TCHAR *pass)
 {
 	HANDLE hPipe;
 	PTCHAR pMsg = TEXT("Teste de mensagem");
@@ -59,43 +59,48 @@ int Autenticar(TCHAR *login, TCHAR *pass)
 
 int LerListaUtilizadores(UTILIZADOR *utilizadores)
 {
+	// Ler do pipe
 	return 0;
 }
 
 int IniciarConversa(TCHAR *utilizador)
 {
+	// Escrever no pipe
 	return 0;
 }
 
 int DesligarConversa()
 {
+	// Escrever no pipe
 	return 0;
 }
 
-int EnviarMensagemPrivada(TCHAR *msg)
+int EnviarMensagemPrivada(const TCHAR *msg)
 {
+	// Escrever no pipe
 	return 0;
 }
 
-void EnviarMensagemPublica(TCHAR *msg)
+void EnviarMensagemPublica(const TCHAR *msg)
 {
-	
+	// Escrever no pipe
 }
 
 CHAT LerInformacaoInicial()
 {
+	// Ler do pipe
 	CHAT dumb;
 	return dumb;
 }
 
 void LerMensagensPublicas()
 {
-
+	// Ler do pipe
 }
 
 void LerMensagensPrivadas()
 {
-
+	// Ler do pipe
 }
 
 int Sair()

@@ -77,6 +77,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\Core\Thread.cpp" />
     <ClCompile Include="..\Logic\ChatPrivate.cpp" />
     <ClCompile Include="..\Logic\ChatPublic.cpp" />
     <ClCompile Include="..\Logic\ChatRoom.cpp" />
@@ -84,6 +85,7 @@
     <ClCompile Include="Dll.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\Core\Thread.h" />
     <ClInclude Include="..\Logic\ChatClasses.h" />
     <ClInclude Include="..\Logic\ChatComunication.h" />
     <ClInclude Include="..\Logic\ChatPrivate.h" />
