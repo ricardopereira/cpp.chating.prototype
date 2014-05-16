@@ -4,8 +4,12 @@
 
 class ThreadCliente: public Thread
 {
+private:
+	HANDLE hPipe;
 public:
-	ThreadCliente();
+
+	ThreadCliente(HANDLE hPipe);
 	~ThreadCliente();
+	virtual DWORD WINAPI funcaoThread(LPVOID param);
 };
 

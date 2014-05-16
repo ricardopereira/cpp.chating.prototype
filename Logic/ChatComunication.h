@@ -1,4 +1,4 @@
-#define BUFFERSIZE 512
+
 #define pipeName _T("\\\\.\\pipe\\pipeserver") //PTCHAR LPTSTR PCTSTR
 
 /*Valores maximos*/
@@ -9,11 +9,17 @@
 #define MAXMESSAGE 255
 
 /*Comunicacao*/
-typedef struct recRequest Request, *pRequest;
-
+typedef struct recRequest Request;
+typedef struct { int i; } chatbuffer_t;
 struct recRequest {
     int pid;
     char username[MAXLOGIN];
     char password[MAXLOGIN];
     char command[MAXCOMMAND];
 };
+
+#if defined(UNICODE) || defined(_UNICODE)
+#define tcout std::wcout
+#else
+#define tcout std::cout
+#endif
