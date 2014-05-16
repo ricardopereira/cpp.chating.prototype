@@ -14,9 +14,9 @@ int Test(PTCHAR str)
 int Autenticar(const TCHAR *login, const TCHAR *pass)
 {
 	HANDLE hPipe;
-	PTCHAR pMsg = TEXT("Teste de mensagem");
+	chatbuffer_t buffer;
 
-    hPipe = CreateFile( 
+    hPipe = CreateFile(
         pipeName,
         GENERIC_READ | GENERIC_WRITE,
         0, //no sharing
@@ -32,18 +32,19 @@ int Autenticar(const TCHAR *login, const TCHAR *pass)
         return 0;
 
 	PTCHAR msg = TEXT("Ligacao com sucesso");
-	DWORD msgBytes;
-	DWORD msgBytesSent;
+	//DWORD msgBytes;
+	DWORD bytesSent;
 	BOOL success = 0;
 
 	// Enviar mensagem
-	msgBytes = (_tcslen(msg)+1)*sizeof(TCHAR);
+	//msgBytes = (_tcslen(msg)+1)*sizeof(TCHAR);
 
-	success = WriteFile(hPipe, 
-		msg, //message 
-		msgBytes, //message length 
-		&msgBytesSent, //bytes written 
-		NULL); //not overlapped 
+	// Envio de pedido
+	success = WriteFile(hPipe,
+		&buffer, //message
+		sizeof(buffer), //message length
+		&bytesSent, //bytes written
+		NULL); //not overlapped
 
 	if (!success) 
 		return -1;
@@ -93,14 +94,18 @@ CHAT LerInformacaoInicial()
 	return dumb;
 }
 
-void LerMensagensPublicas()
+MENSAGEM LerMensagensPublicas()
 {
 	// Ler do pipe
+	MENSAGEM dumb;
+	return dumb;
 }
 
-void LerMensagensPrivadas()
+MENSAGEM LerMensagensPrivadas()
 {
 	// Ler do pipe
+	MENSAGEM dumb;
+	return dumb;
 }
 
 int Sair()
