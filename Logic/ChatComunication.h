@@ -17,9 +17,3 @@ struct recRequest {
     char password[MAXLOGIN];
     char command[MAXCOMMAND];
 };
-
-#if defined(UNICODE) || defined(_UNICODE)
-#define tcout std::wcout
-#else
-#define tcout std::cout
-#endif

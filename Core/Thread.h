@@ -13,7 +13,6 @@ protected:
 	DWORD threadID;
 	static DWORD WINAPI stub(LPVOID param);
 public:
-
 	~Thread();
 	virtual DWORD WINAPI funcaoThread()=0;
 	virtual void LancarThread();

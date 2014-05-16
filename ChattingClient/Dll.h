@@ -15,32 +15,32 @@
 
 extern "C"
 {
-	typedef struct{
+	typedef struct {
 		TCHAR login[TAMLOGIN], password[TAMPASS];
 		short int tipo; //1-utilizador 2-admin
 		short int estado; //0-livre 1-ocupado numa conversa privada
-	}UTILIZADOR;
+	} UTILIZADOR;
 
-	typedef struct{
+	typedef struct {
 		short int ano, mes, dia, hora, minuto, segundo;
-	}DATA;
+	} DATA;
 
-	typedef struct{
+	typedef struct {
 		TCHAR texto[TAMTEXTO];
 		DATA instante;
-	}MENSAGEM;
+	} MENSAGEM;
 
-	typedef struct{
+	typedef struct {
 		MENSAGEM publicas[NUMMSGSPUBLICAS];
 		MENSAGEM privadas[NUMUTILIZADORES][NUMMSGSPRIVADAS];
-	}CHAT;
+	} CHAT;
 
 	//Funções a serem exportadas/importadas
 	DLL_IMP_API int Test(PTCHAR str);
 	DLL_IMP_API int Autenticar(const TCHAR *login, const TCHAR *pass);
 	DLL_IMP_API int LerListaUtilizadores(UTILIZADOR *utilizadores);
 	DLL_IMP_API int LerListaUtilizadoresRegistados(UTILIZADOR *utilizadores);
-	DLL_IMP_API int IniciarConversa(TCHAR *utilizador);
+	DLL_IMP_API int IniciarConversa(const TCHAR *utilizador);
 	DLL_IMP_API int DesligarConversa();
 	DLL_IMP_API int EnviarMensagemPrivada(const TCHAR *msg);
 	DLL_IMP_API void EnviarMensagemPublica(const TCHAR *msg);

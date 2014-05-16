@@ -1,6 +1,7 @@
+#include "Shell.h"
 #include "ThreadCliente.h"
 #include "ChatComunication.h"
-#include <iostream>
+
 ThreadCliente::ThreadCliente(HANDLE hPipe)
 {
 	this->ptrClasse = this;
@@ -12,13 +13,14 @@ ThreadCliente::~ThreadCliente()
 
 }
 
-DWORD WINAPI ThreadCliente::funcaoThread(LPVOID param){
+DWORD WINAPI ThreadCliente::funcaoThread() {
 	chatbuffer_t buffer;
 	bool powerOff = false;
-	bool leituraEscritaSucesso = false;
+	BOOL leituraEscritaSucesso = false;
 	DWORD bytesLidos = 0;
-	while (!powerOff){
 
+	while (!powerOff) {
+		
 		leituraEscritaSucesso = ReadFile(
 			hPipe,
 			&buffer,
@@ -30,7 +32,7 @@ DWORD WINAPI ThreadCliente::funcaoThread(LPVOID param){
 		{
 			if (GetLastError() == ERROR_BROKEN_PIPE)
 			{
-				tcout << TEXT("ThreadAtendeCliente: Cliente desligou-se.\n");
+				tcout << TEXT("ThreadCliente: Cliente desligou-se.\n");
 				//contador--; //possiveis erros
 				//TERMINAR:: CloseHandle(
 			}

@@ -38,18 +38,13 @@ int main()
 
 void comandStart()
 {
-	// Teste
-	//while (1) {
-		// Tratamento dos clientes
-
-	//}
-
 	// Um pipe
 	HANDLE hPipe, lastPipe;
 	BOOL connected = 1;
 	BOOL success = 0;
 	vector<ThreadCliente*> clients;
-	while (1){
+
+	while (1) {
 		hPipe = CreateNamedPipe(pipeName,
 			PIPE_ACCESS_DUPLEX, //OpenMode
 			PIPE_TYPE_MESSAGE | PIPE_READMODE_MESSAGE | PIPE_WAIT, //PipeMode
@@ -62,7 +57,7 @@ void comandStart()
 		// Verificar se pipe foi instanciado
 		if (hPipe == INVALID_HANDLE_VALUE)
 		{
-		tcout << TEXT("CreateNamedPipe failed: ") << GetLastError() << endl;
+		    tcout << TEXT("CreateNamedPipe failed: ") << GetLastError() << endl;
 			return;
 		}
 

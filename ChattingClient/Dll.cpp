@@ -36,9 +36,6 @@ int Autenticar(const TCHAR *login, const TCHAR *pass)
 	DWORD bytesSent;
 	BOOL success = 0;
 
-	// Enviar mensagem
-	//msgBytes = (_tcslen(msg)+1)*sizeof(TCHAR);
-
 	// Envio de pedido
 	success = WriteFile(hPipe,
 		&buffer, //message
